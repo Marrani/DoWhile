@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "612021362470",
+    "project_id": "workshopmovie-9a67b",
+    "storage_bucket": "workshopmovie-9a67b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612021362470:android:4b73c5dc9958be8364abe7",
+        "android_client_info": {
+          "package_name": "com.gabriel.yourfavoritemovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612021362470-2v1o74a8ipic6r05ef1tdiq2htel0unv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmjvE95Ij1TT47JxPkGtMYChNaTENhkhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612021362470-2v1o74a8ipic6r05ef1tdiq2htel0unv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
