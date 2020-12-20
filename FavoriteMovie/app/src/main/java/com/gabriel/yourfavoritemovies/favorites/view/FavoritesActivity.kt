@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.gabriel.yourfavoritemovies.R
@@ -33,14 +34,28 @@ class FavoritesActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true);
         rv_movies_favorites.adapter = adapter
         rv_movies_favorites.layoutManager = LinearLayoutManager(this)
-       //TODO - Recupera a lista de filmes favoritados a partir do viewmodel
+        viewModel.getFavorites()
+        initViewModel()
     }
 
     private fun removeFavoriteMovie(result: Result){
-        //TODO - Referenciar a partir do viewmodel a função responsável por remover um filme
+        viewModel.removeFavoriteClickListener(result)
     }
 
-    //TODO - Implementar os observers do viewmodel
+    private fun initViewModel() {
+        viewModel.stateList.observe(this, { state ->
+            state?.let {
+                showListFavorites(it as MutableList<Result>)
+            }
+        })
+
+        viewModel.stateRemoveFavorite.observe(this, { favorite ->
+            favorite?.let {
+                showMessageRemovedFavorite(it)
+            }
+
+        })
+    }
 
 
     private fun showListFavorites(list: MutableList<Result>){
